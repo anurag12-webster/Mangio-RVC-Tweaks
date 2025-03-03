@@ -19,6 +19,9 @@ import torch.nn.functional as F
 import soundfile as sf
 import numpy as np
 from fairseq import checkpoint_utils
+import torch.serialization
+from fairseq.data.dictionary import Dictionary
+torch.serialization.add_safe_globals([Dictionary])
 
 device = "cpu"
 if torch.cuda.is_available():
